@@ -8,7 +8,7 @@
 
 int _print_modulo(va_list argument)
 {
-/* Code section : */
+(void) argument;
 _putchar('%');
 
 return (1);

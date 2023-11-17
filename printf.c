@@ -15,7 +15,7 @@ va_list argument;
 sp_print_struct sp_char[] = {
 {'s', _print_string},
 {'c', _print_char},
-{'%', _print_modulo},
+{'%', _print_modulo}
 };
 
 /* Code section : */
@@ -32,7 +32,6 @@ for (; count < 7; count++)
 {
 if (format[i] == sp_char[count].specifier)
 len_of_char_printed += sp_char[count].sp_poinetr_fun(argument);
-count++;
 }
 break;
 default:
