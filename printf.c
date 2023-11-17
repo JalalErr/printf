@@ -20,7 +20,7 @@ sp_print_struct sp_char[] = {
 
 /* Code section : */
 va_start(argument, format);
-if (format != NULL || (format[i] == '%' && format[i + 1] == '\0'))
+if (!format || (format[i] == '%' && format[i + 1] == '\0'))
 return (-1);
 while (format && format[i] != '\0')
 {
@@ -39,6 +39,7 @@ default:
 len_of_char_printed += _putchar(format[i]);
 break;
 }
+i++;
 }
 va_end(argument);
 return (len_of_char_printed);
