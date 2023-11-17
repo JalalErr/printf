@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	/*Variable declaring section :*/
-	int lenght = 0, i = 0, count = 0;
+	int lenght = 0, i = 0, count;
 	va_list argument;
 	sp_print_struct sp_char[] = {
 		{'s', _print_string},
@@ -24,13 +24,13 @@ int _printf(const char *format, ...)
 	va_start(argument, format);
 	if (!format || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
-	while (format && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
 			case '%':
 				i++;
-				for (; count < 7; count++)
+				for (count = 0; count < 5; count++)
 				{
 					if (format[i] == sp_char[count].specifier)
 						lenght += sp_char[count].sp_poinetr_fun(argument);
