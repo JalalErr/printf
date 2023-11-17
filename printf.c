@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		{'s', _print_string},
 		{'c', _print_char},
 		{'%', _print_modulo},
-		{'k', _print_K},
+		{'K', _print_K},
 		{'!', _print_ex}
 	};
 
