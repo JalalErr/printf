@@ -14,6 +14,8 @@ int _print_char(va_list argument);
 int _print_modulo(va_list argument);
 int _print_string(va_list argument);
 int _printf(const char *format, ...);
+int _print_ex(va_list argument);
+int _print_K(va_list argument);
 
 /* Declaring an struct :*/
 

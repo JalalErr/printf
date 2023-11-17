@@ -8,18 +8,17 @@
 
 int _print_string(va_list argument)
 {
-/* Variable Declaring  :*/
-int len = 0;
-char *string, string_null[4] = "NULL";
+	/* Variable Declaring  :*/
+	int len = 0;
+	char *string = va_arg(argument, char *);
 
-/* Code section : */
-string = va_arg(argument, char *);
-if (string == NULL)
-return (write(1, string_null, 4));
-while (string[len])
-{
-_putchar(string[len]);
-len++;
-}
-return (len);
+	/* Code section : */
+	if (string == NULL)
+		string = "(null)";
+	while (*string != '\0')
+	{
+		len += _putchar(*string);
+		string++;
+	}
+	return (len);
 }
